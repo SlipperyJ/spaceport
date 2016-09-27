@@ -28,11 +28,14 @@ As a spaceport traffic controller
 So spaceships can take off safely from my spaceport  
 I would like to instruct a spaceship to release from a spaceport   
 ```
-#### Yet to be implemented
 
+```
 As a spaceport traffic controller   
-So I can prevent spaceship accidents and time wasting   
+So I can prevent spaceship collisions and time wasting   
 I would like to prevent spaceships from docking when the spaceport is full
+```
+
+#### Yet to be implemented
 
 As a spaceport traffic controller   
 So that I can ensure safe release procedures   
