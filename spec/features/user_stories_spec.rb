@@ -10,7 +10,7 @@ describe 'User Stories' do
 
   # `As a spaceport traffic controller
   # `So spaceships can take off safely from my spaceport
-  # `I would like to instruct a spaceship to un-dock
+  # `I would like to instruct a spaceship to release
   it 'so spaceships un-dock from spaceports, instruct a spaceship to un-dock' do
     spaceport = Spaceport.new
     spaceship = Spaceship.new
