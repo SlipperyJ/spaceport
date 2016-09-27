@@ -17,8 +17,8 @@ inhabitants and associates.
 ### User Stories
 
 As a spaceport traffic controller   
-So spaceships can land safely at my spaceport   
-I would like to instruct a spaceship to dock
+So spaceships can dock safely and efficiently at my spaceport   
+I would like to instruct a spaceship to dock   
 
 As a spaceport traffic controller   
 To ensure a timely docking service and keep traffic constant   
