@@ -16,33 +16,29 @@ inhabitants and associates.
 
 ### User Stories
 
+#### Implemented
+
 As a spaceport traffic controller   
 So spaceships can dock safely and efficiently at my spaceport   
 I would like to instruct a spaceship to dock   
 
-As a spaceport traffic controller   
-To ensure a timely docking service and keep traffic constant   
-I would like to automatically deny docking requests unless the requesting ship is within 7.5km
+#### Yet to be implemented
 
 As a spaceport traffic controller   
-To ensure spaceport safety
-I would like to automatically deny docking requests from wanted spaceships
-
-As a spaceport traffic controller   
-So spaceships can take off safely from my spacestation   
-I would like to instruct a spaceship to un-dock
+So spaceships can take off safely from my spaceport  
+I would like to instruct a spaceship to release from a spaceport
 
 As a spaceport traffic controller   
 So I can prevent spaceship accidents and time wasting   
 I would like to prevent spaceships from docking when the spaceport is full
 
 As a spaceport traffic controller   
-So that I can ensure safe un-dock procedures   
-I want to prevent spaceships from docking or un-docking during security alerts
+So that I can ensure safe release procedures   
+I want to prevent spaceships from docking or releasing during security alerts
 
 As a spaceport traffic controller   
-So that I can ensure safe un-docking procedures   
-I want spaceships to only take off from the spaceport they are at
+So that I can ensure safe releasing procedures   
+I want spaceships to only take off from the spaceport they are in
 
 As the system designer   
 So that the software can be used for many different spaceports   
@@ -63,3 +59,11 @@ I want to ensure a docked spaceship cannot dock and must be in a spaceport
 As a spaceport traffic controller   
 So the system is consistent and correctly reports spaceship status and location   
 I want to ensure a spaceship that has un-docked from a spaceport is no longer in that spaceport
+
+As a spaceport traffic controller   
+To ensure spaceport safety
+I would like to automatically deny docking requests from wanted spaceships
+
+As a spaceport traffic controller   
+To ensure a timely docking service and keep traffic constant   
+I would like to automatically deny docking requests unless the requesting ship is within 7.5km

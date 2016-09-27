@@ -8,4 +8,7 @@ describe Spaceport do
     expect(spaceport).to respond_to(:dock).with(1).argument
   end
 
+  it 'instructs a spaceship to release' do
+    expect(spaceport).to respond_to(:release).with(1).argument
+  end
 end

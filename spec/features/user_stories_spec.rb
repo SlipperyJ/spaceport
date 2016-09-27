@@ -7,4 +7,13 @@ describe 'User Stories' do
     spaceship = Spaceship.new
     expect { spaceport.dock(spaceship) }.not_to raise_error
   end
+
+  # `As a spaceport traffic controller
+  # `So spaceships can take off safely from my spaceport
+  # `I would like to instruct a spaceship to un-dock
+  it 'so spaceships un-dock from spaceports, instruct a spaceship to un-dock' do
+    spaceport = Spaceport.new
+    spaceship = Spaceship.new
+    expect { spaceport.release(spaceship) }.not_to raise_error
+  end
 end
