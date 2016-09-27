@@ -1,12 +1,12 @@
 # Spaceport
 
-This is a project for the sole purpose practicing TDD with Ruby and is loosely based on the game Elite Dangerous. 
-Spaceport is a system for organising the docking of spaceships at busy spaceports that have a constant traffic of 
+This is a project for the sole purpose practicing TDD with Ruby and is loosely based on the game Elite Dangerous.
+Spaceport is a system for organising the docking of spaceships at busy spaceports that have a constant traffic of
 eg. large trade ships, medium sized explorer ships and small fighters.   
- 
-In a brutally violent galaxy, safety and efficiency is key to the prosperity and survival of a spaceport, that's why 
-our unrivalled spaceport docking technology should be used by all spaceports that harbor the utmost care for their 
-inhabitants and associates. 
+
+In a brutally violent galaxy, safety and efficiency is key to the prosperity and survival of a spaceport, that's why
+our unrivalled spaceport docking technology should be used by all spaceports that harbor the utmost care for their
+inhabitants and associates.
 
 
 ### Technologies
@@ -22,11 +22,11 @@ As a spaceport traffic controller
 So spaceships can dock safely and efficiently at my spaceport   
 I would like to instruct a spaceship to dock   
 
-#### Yet to be implemented
-
 As a spaceport traffic controller   
 So spaceships can take off safely from my spaceport  
-I would like to instruct a spaceship to release from a spaceport
+I would like to instruct a spaceship to release from a spaceport   
+
+#### Yet to be implemented
 
 As a spaceport traffic controller   
 So I can prevent spaceship accidents and time wasting   
@@ -47,10 +47,10 @@ I would like a default spaceport capacity that can be overridden as appropriate
 As the system designer   
 So that the software can account for variations in spaceport docking pad size   
 I would like a default docking pad size that can be overridden as appropriate
- 
+
 As a spaceport traffic controller   
 So the system is consistent and correctly reports spaceship status and location   
-I want to ensure an un-docked spaceship cannot un-dock and cannot be in a spaceport
+I want to ensure a released spaceship cannot release and cannot be in a spaceport
 
 As a spaceport traffic controller   
 So the system is consistent and correctly reports spaceship status and location   
@@ -58,7 +58,7 @@ I want to ensure a docked spaceship cannot dock and must be in a spaceport
 
 As a spaceport traffic controller   
 So the system is consistent and correctly reports spaceship status and location   
-I want to ensure a spaceship that has un-docked from a spaceport is no longer in that spaceport
+I want to ensure a spaceship that has releaseed from a spaceport is no longer in that spaceport
 
 As a spaceport traffic controller   
 To ensure spaceport safety
