@@ -29,7 +29,7 @@ To ensure spaceport safety
 I would like to automatically deny docking requests from wanted spaceships
 
 As a spaceport traffic controller   
-So planes can take off safely from my airport   
+So spaceships can take off safely from my spacestation   
 I would like to instruct a spaceship to un-dock
 
 As a spaceport traffic controller   
@@ -46,7 +46,7 @@ I want spaceships to only take off from the spaceport they are at
 
 As the system designer   
 So that the software can be used for many different spaceports   
-I would like a default airport capacity that can be overridden as appropriate
+I would like a default spaceport capacity that can be overridden as appropriate
 
 As the system designer   
 So that the software can account for variations in spaceport docking pad size   
