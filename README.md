@@ -16,16 +16,14 @@ inhabitants and associates.
 
 ### User Stories
 
-#### Implemented:
+#### Implemented :white_check_mark:
 ```
-:white_check_mark:
 As a spaceport traffic controller   
 So spaceships can dock safely and efficiently at my spaceport   
 I would like to instruct a spaceship to dock   
 ```
 
 ```
-:white_check_mark:
 As a spaceport traffic controller   
 So spaceships can take off safely from my spaceport  
 I would like to instruct a spaceship to release from a spaceport   
