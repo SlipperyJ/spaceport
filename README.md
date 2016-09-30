@@ -35,11 +35,13 @@ So I can prevent spaceship collisions and time wasting
 I would like to prevent spaceships from docking when the spaceport is full
 ```
 
-#### Yet to be implemented
-
+```
 As a spaceport traffic controller   
 So that I can ensure safe release procedures   
 I want to prevent spaceships from docking or releasing during security alerts
+```
+
+#### Yet to be implemented
 
 As a spaceport traffic controller   
 So that I can ensure safe releasing procedures   

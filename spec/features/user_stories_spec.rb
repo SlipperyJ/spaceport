@@ -24,9 +24,6 @@ describe 'User Stories' do
     end
   end
 
-  # As a spaceport traffic controller
-  # So that I can ensure safe release procedures
-  # I want to prevent spaceships from docking or releasing during security alerts
   context 'when security alert is active' do
     before do
       allow(spaceport).to receive(:security_alert?).and_return true
