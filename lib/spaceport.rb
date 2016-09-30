@@ -7,6 +7,7 @@ class Spaceport
 
   def dock(spaceship)
     raise 'Cannot dock spaceship: spaceport full.' if full?
+    raise 'Cannot dock spaceship: security alert active.' if security_alert?
     @spaceships << spaceship
   end
 
@@ -17,5 +18,9 @@ class Spaceport
 
     def full?
       @spaceships.length >= @capacity
+    end
+
+    def security_alert?
+      rand(1..10) < 3
     end
 end
