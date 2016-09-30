@@ -10,7 +10,7 @@ describe 'User Stories' do
       expect { spaceport.dock(spaceship) }.not_to raise_error
     end
 
-    it 'so spaceships un-dock from spaceports, instruct a spaceship to un-dock' do
+    it 'so spaceships release from spaceports, instruct a spaceship to release' do
       expect { spaceport.release(spaceship) }.not_to raise_error
     end
 
