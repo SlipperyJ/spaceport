@@ -33,8 +33,24 @@ describe Spaceport do
   end
 
   describe '#release' do
-    it 'instructs a spaceship to release' do
-      expect(spaceport).to respond_to(:release).with(1).argument
+    context 'when security alert is inactive' do
+      before do
+        allow(spaceport).to receive(:security_alert?).and_return false
+      end
+
+      it 'instructs a spaceship to release' do
+        expect(spaceport).to respond_to(:release).with(1).argument
+      end
+    end
+
+    context 'when security alert is active' do
+      before do
+        allow(spaceport).to receive(:security_alert?).and_return true
+      end
+
+      it 'raises an error' do
+        expect{ spaceport.release(spaceship) }.to raise_error 'Cannot release spaceship: security alert active.'
+      end
     end
   end
 end

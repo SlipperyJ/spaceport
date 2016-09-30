@@ -34,5 +34,9 @@ describe 'User Stories' do
     it 'does not allow spaceships to dock' do
       expect { spaceport.dock(spaceship) }.to raise_error 'Cannot dock spaceship: security alert active.'
     end
+
+    it 'does not allow spaceships to release' do
+      expect { spaceport.release(spaceship) }.to raise_error 'Cannot release spaceship: security alert active.'
+    end
   end
 end

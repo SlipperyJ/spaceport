@@ -12,6 +12,7 @@ class Spaceport
   end
 
   def release(spaceship)
+    raise 'Cannot release spaceship: security alert active.' if security_alert?
   end
 
   private
