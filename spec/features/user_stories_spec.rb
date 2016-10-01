@@ -13,7 +13,14 @@ describe 'User Stories' do
     end
 
     it 'so spaceships release from spaceports, instruct a spaceship to release' do
+      spaceport.dock(spaceship)
       expect { spaceport.release(spaceship) }.not_to raise_error
+    end
+
+    it 'releases a spaceship only from a spaceport the are docked' do
+      spaceport2 = Spaceport.new(36, security_system)
+      spaceport2.dock(spaceship)
+      expect { spaceport.release(spaceship) }.to raise_error 'Cannot release spaceship: spaceship is not at this spacestation'
     end
 
     context 'when spacestation is full' do

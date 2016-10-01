@@ -42,6 +42,12 @@ describe Spaceport do
       it 'instructs a spaceship to release' do
         expect(spaceport).to respond_to(:release).with(1).argument
       end
+
+      it 'raises an error if the spaceship is not docked at this spaceport' do
+        other_spaceport = Spaceport.new(36, security_system)
+        other_spaceport.dock(spaceship)
+        expect { spaceport.release(spaceship) }.to raise_error 'Cannot release spaceship: spaceship is not at this spacestation'
+      end
     end
 
     context 'when security alert is active' do

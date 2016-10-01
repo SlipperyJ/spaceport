@@ -40,12 +40,13 @@ As a spaceport traffic controller
 So that I can ensure safe release procedures   
 I want to prevent spaceships from docking or releasing during security alerts
 ```
-
-#### Yet to be implemented
-
+```
 As a spaceport traffic controller   
 So that I can ensure safe releasing procedures   
-I want spaceships to only take off from the spaceport they are in
+I want spaceships to only take off from the spaceport they are at
+```
+
+#### Yet to be implemented
 
 As the system designer   
 So that the software can be used for many different spaceports   

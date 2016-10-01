@@ -16,6 +16,7 @@ class Spaceport
 
   def release(spaceship)
     raise 'Cannot release spaceship: security alert active.' if security_alert?
+    raise 'Cannot release spaceship: spaceship is not at this spacestation' unless at_spaceport?(spaceship)
   end
 
   private
@@ -26,5 +27,9 @@ class Spaceport
 
     def security_alert?
       @security_system.security_alert?
+    end
+
+    def at_spaceport?(spaceship)
+      @spaceships.include?(spaceship)
     end
 end
