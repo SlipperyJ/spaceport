@@ -1,13 +1,14 @@
 require 'spaceport'
 
 describe Spaceport do
-  subject(:spaceport) { described_class.new(36) }
+  subject(:spaceport) { described_class.new(36, security_system) }
   let(:spaceship) { double :spaceship }
+  let(:security_system) { double :security_system }
 
   describe '#dock' do
     context 'when security alert is inactive' do
       before do
-        allow(spaceport).to receive(:security_alert?).and_return false
+        allow(security_system).to receive(:security_alert?).and_return false
       end
 
       it 'instructs a spaceship to dock' do
@@ -26,7 +27,7 @@ describe Spaceport do
 
     context 'when security alert is active' do
       it 'raises an error if the spaceship docks during a security alert' do
-        allow(spaceport).to receive(:security_alert?).and_return true
+        allow(security_system).to receive(:security_alert?).and_return true
         expect { spaceport.dock(spaceship) }.to raise_error 'Cannot dock spaceship: security alert active.'
       end
     end
@@ -35,7 +36,7 @@ describe Spaceport do
   describe '#release' do
     context 'when security alert is inactive' do
       before do
-        allow(spaceport).to receive(:security_alert?).and_return false
+        allow(security_system).to receive(:security_alert?).and_return false
       end
 
       it 'instructs a spaceship to release' do
@@ -45,7 +46,7 @@ describe Spaceport do
 
     context 'when security alert is active' do
       before do
-        allow(spaceport).to receive(:security_alert?).and_return true
+        allow(security_system).to receive(:security_alert?).and_return true
       end
 
       it 'raises an error' do

@@ -1,6 +1,8 @@
 describe 'User Stories' do
-  let(:spaceport) { Spaceport.new(36) }
+  let(:spaceport) { Spaceport.new(36, security_system) }
   let(:spaceship) { Spaceship.new }
+  let(:security_system) { SecuritySystem.new }
+
   context 'when security alert inactive' do
     before do
       allow(spaceport).to receive(:security_alert?).and_return false

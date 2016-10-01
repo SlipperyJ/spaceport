@@ -1,7 +1,10 @@
+require_relative 'security_system'
+
 class Spaceport
 
-  def initialize(capacity)
+  def initialize(capacity, security_system)
     @capacity = capacity
+    @security_system = security_system
     @spaceships = []
   end
 
@@ -22,6 +25,6 @@ class Spaceport
     end
 
     def security_alert?
-      rand(1..10) < 3
+      @security_system.security_alert?
     end
 end
