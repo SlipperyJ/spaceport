@@ -1,13 +1,13 @@
 # Spaceport
 
-This is a project for the sole purpose practicing TDD with Ruby and is loosely based on the game Elite Dangerous.
-Spaceport is a system for organising the docking of spaceships at busy spaceports that have a constant traffic of
-eg. large trade ships, medium sized explorer ships and small fighters.   
-
-In a brutally violent galaxy, safety and efficiency is key to the prosperity and survival of a spaceport, that's why
+In a brutal and violent galaxy, safety and efficiency is key to the prosperity and survival of a spaceport, that's why
 our unrivalled spaceport docking technology should be used by all spaceports that harbor the utmost care for their
 inhabitants and associates.
 
+For the sole purpose practicing TDD with Ruby, I came up with the idea of building a spaceport system loosely based 
+on the game elite dangerous. Spaceport is a system for organising the docking of spaceships at busy spaceports that 
+have a constant traffic of eg. large trade ships, medium sized explorer ships and small fighters, with the occasional
+trouble maker that needs to be dealt with by security forces.
 
 ### Technologies
 
