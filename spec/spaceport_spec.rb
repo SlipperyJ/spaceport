@@ -43,7 +43,7 @@ describe Spaceport do
         expect(spaceport).to respond_to(:release).with(1).argument
       end
 
-      it 'returns the spaceship that takes off' do
+      it 'returns the spaceship that releases' do
         spaceport.dock(spaceship)
         expect(spaceport.release(spaceship)).to eq spaceship
       end
