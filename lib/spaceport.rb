@@ -18,6 +18,7 @@ class Spaceport
   def release(spaceship)
     raise 'Cannot release spaceship: security alert active.' if security_alert?
     raise 'Cannot release spaceship: spaceship is not at this spacestation' unless at_spaceport?(spaceship)
+    spaceship
   end
 
   private

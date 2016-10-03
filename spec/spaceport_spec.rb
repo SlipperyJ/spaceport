@@ -43,6 +43,11 @@ describe Spaceport do
         expect(spaceport).to respond_to(:release).with(1).argument
       end
 
+      it 'returns the spaceship that takes off' do
+        spaceport.dock(spaceship)
+        expect(spaceport.release(spaceship)).to eq spaceship
+      end
+
       it 'raises an error if the spaceship is not docked at this spaceport' do
         other_spaceport = Spaceport.new(security_system, 36)
         other_spaceport.dock(spaceship)

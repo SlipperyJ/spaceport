@@ -5,7 +5,7 @@ describe 'User Stories' do
 
   context 'when security alert inactive' do
     before do
-      allow(spaceport).to receive(:security_alert?).and_return false
+      allow(security_system).to receive(:security_alert?).and_return false
     end
 
     it 'so spaceships dock at spaceports, instruct a spaceship to dock' do
@@ -19,16 +19,26 @@ describe 'User Stories' do
 
     it 'releases a spaceship only from a spaceport the are docked' do
       spaceport2 = Spaceport.new(security_system, 36)
-      allow(spaceport2).to receive(:security_alert?).and_return false
       spaceport2.dock(spaceship)
       expect { spaceport.release(spaceship) }.to raise_error 'Cannot release spaceship: spaceship is not at this spacestation'
     end
 
     it 'spaceports have a default capacity' do
       default_spaceport = Spaceport.new(security_system)
-      allow(default_spaceport).to receive(:security_alert?).and_return false
       Spaceport::DEFAULT_CAPACITY.times { default_spaceport.dock(spaceship) }
       expect { default_spaceport.dock(spaceship) }.to raise_error 'Cannot dock spaceship: spaceport full.'
+    end
+
+    it 'released spaceships cannot take off' do
+      spaceport.dock(spaceship)
+      released_spaceship = spaceport.release(spaceship)
+      expect { released_spaceship.release }.to raise_error 'Spaceship cannot release: spaceship is not docked'
+    end
+
+    it 'released spaceships cannot be in a spaceport' do
+      spaceport.dock(spaceship)
+      released_spaceship = spaceport.release(spaceship)
+      expect { released_spaceship.spaceport }.to raise_error 'Spaceship cannot be at spaceport: spaceship currently released'
     end
 
     context 'when spacestation is full' do
@@ -43,7 +53,7 @@ describe 'User Stories' do
 
   context 'when security alert is active' do
     before do
-      allow(spaceport).to receive(:security_alert?).and_return true
+      allow(security_system).to receive(:security_alert?).and_return true
     end
     it 'does not allow spaceships to dock' do
       expect { spaceport.dock(spaceship) }.to raise_error 'Cannot dock spaceship: security alert active.'

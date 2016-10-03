@@ -50,6 +50,11 @@ As the system designer
 So that the software can be used for many different spaceports   
 I would like a default spaceport capacity that can be overridden as appropriate
 ```
+```
+As a spaceport traffic controller   
+So the system is consistent and correctly reports spaceship status and location   
+I want to ensure a released spaceship cannot release and cannot be in a spaceport
+```
 
 #### Yet to be implemented
 
