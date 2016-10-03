@@ -1,5 +1,5 @@
 describe 'User Stories' do
-  let(:spaceport) { Spaceport.new(36, security_system) }
+  let(:spaceport) { Spaceport.new(security_system, 36) }
   let(:spaceship) { Spaceship.new }
   let(:security_system) { SecuritySystem.new }
 
@@ -18,9 +18,17 @@ describe 'User Stories' do
     end
 
     it 'releases a spaceship only from a spaceport the are docked' do
-      spaceport2 = Spaceport.new(36, security_system)
+      spaceport2 = Spaceport.new(security_system, 36)
+      allow(spaceport2).to receive(:security_alert?).and_return false
       spaceport2.dock(spaceship)
       expect { spaceport.release(spaceship) }.to raise_error 'Cannot release spaceship: spaceship is not at this spacestation'
+    end
+
+    it 'spaceports have a default capacity' do
+      default_spaceport = Spaceport.new(security_system)
+      allow(default_spaceport).to receive(:security_alert?).and_return false
+      Spaceport::DEFAULT_CAPACITY.times { default_spaceport.dock(spaceship) }
+      expect { default_spaceport.dock(spaceship) }.to raise_error 'Cannot dock spaceship: spaceport full.'
     end
 
     context 'when spacestation is full' do

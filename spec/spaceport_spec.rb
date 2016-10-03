@@ -1,7 +1,7 @@
 require 'spaceport'
 
 describe Spaceport do
-  subject(:spaceport) { described_class.new(36, security_system) }
+  subject(:spaceport) { described_class.new(security_system, 36) }
   let(:spaceship) { double :spaceship }
   let(:security_system) { double :security_system }
 
@@ -44,7 +44,7 @@ describe Spaceport do
       end
 
       it 'raises an error if the spaceship is not docked at this spaceport' do
-        other_spaceport = Spaceport.new(36, security_system)
+        other_spaceport = Spaceport.new(security_system, 36)
         other_spaceport.dock(spaceship)
         expect { spaceport.release(spaceship) }.to raise_error 'Cannot release spaceship: spaceship is not at this spacestation'
       end
@@ -58,6 +58,16 @@ describe Spaceport do
       it 'raises an error' do
         expect{ spaceport.release(spaceship) }.to raise_error 'Cannot release spaceship: security alert active.'
       end
+    end
+  end
+
+  context 'defaults' do
+    subject(:default_spaceport) { described_class.new(security_system)}
+
+    it 'has a default capacity' do
+      allow(security_system).to receive(:security_alert?).and_return false
+      described_class::DEFAULT_CAPACITY.times { default_spaceport.dock(spaceship) }
+      expect { default_spaceport.dock(spaceship) }.to raise_error 'Cannot dock spaceship: spaceport full.'
     end
   end
 end

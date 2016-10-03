@@ -45,16 +45,13 @@ As a spaceport traffic controller
 So that I can ensure safe releasing procedures   
 I want spaceships to only take off from the spaceport they are at
 ```
-
-#### Yet to be implemented
-
+```
 As the system designer   
 So that the software can be used for many different spaceports   
 I would like a default spaceport capacity that can be overridden as appropriate
+```
 
-As the system designer   
-So that the software can account for variations in spaceport docking pad size   
-I would like a default docking pad size that can be overridden as appropriate
+#### Yet to be implemented
 
 As a spaceport traffic controller   
 So the system is consistent and correctly reports spaceship status and location   

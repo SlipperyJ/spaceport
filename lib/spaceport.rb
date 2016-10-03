@@ -1,8 +1,9 @@
 require_relative 'security_system'
 
 class Spaceport
+  DEFAULT_CAPACITY = 36
 
-  def initialize(capacity, security_system)
+  def initialize(security_system, capacity = DEFAULT_CAPACITY)
     @capacity = capacity
     @security_system = security_system
     @spaceships = []
