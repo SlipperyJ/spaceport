@@ -12,12 +12,14 @@ class Spaceport
   def dock(spaceship)
     raise 'Cannot dock spaceship: spaceport full.' if full?
     raise 'Cannot dock spaceship: security alert active.' if security_alert?
+    spaceship.dock(self)
     @spaceships << spaceship
   end
 
   def release(spaceship)
     raise 'Cannot release spaceship: security alert active.' if security_alert?
     raise 'Cannot release spaceship: spaceship is not at this spacestation' unless at_spaceport?(spaceship)
+    spaceship.release
     spaceship
   end
 

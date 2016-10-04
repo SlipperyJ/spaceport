@@ -2,7 +2,7 @@ require 'spaceport'
 
 describe Spaceport do
   subject(:spaceport) { described_class.new(security_system, 36) }
-  let(:spaceship) { double :spaceship }
+  let(:spaceship) { double :spaceship, dock: nil, release: nil }
   let(:security_system) { double :security_system }
 
   describe '#dock' do
@@ -12,7 +12,8 @@ describe Spaceport do
       end
 
       it 'instructs a spaceship to dock' do
-        expect(spaceport).to respond_to(:dock).with(1).argument
+        expect(spaceship).to receive(:dock)
+        spaceport.dock(spaceship)
       end
 
       context 'when full' do
@@ -40,7 +41,9 @@ describe Spaceport do
       end
 
       it 'instructs a spaceship to release' do
-        expect(spaceport).to respond_to(:release).with(1).argument
+        spaceport.dock(spaceship)
+        expect(spaceship).to receive(:release)
+        spaceport.release(spaceship)
       end
 
       it 'returns the spaceship that releases' do

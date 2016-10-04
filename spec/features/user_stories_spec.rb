@@ -25,26 +25,36 @@ describe 'User Stories' do
 
     it 'spaceports have a default capacity' do
       default_spaceport = Spaceport.new(security_system)
-      Spaceport::DEFAULT_CAPACITY.times { default_spaceport.dock(spaceship) }
+      Spaceport::DEFAULT_CAPACITY.times do
+        another_spaceship = Spaceship.new
+        default_spaceport.dock(another_spaceship)
+      end
       expect { default_spaceport.dock(spaceship) }.to raise_error 'Cannot dock spaceship: spaceport full.'
     end
 
     it 'released spaceships cannot take off' do
-      spaceport.dock(spaceship)
-      released_spaceship = spaceport.release(spaceship)
-      expect { released_spaceship.release }.to raise_error 'Spaceship cannot release: spaceship is not docked'
+      expect { spaceship.release }.to raise_error 'Spaceship cannot release: spaceship is not docked'
     end
 
     it 'released spaceships cannot be in a spaceport' do
+      expect { spaceship.spaceport }.to raise_error 'Spaceship cannot be at spaceport: spaceship currently released'
+    end
+
+    it 'docked spaceships cannot dock' do
       spaceport.dock(spaceship)
-      released_spaceship = spaceport.release(spaceship)
-      expect { released_spaceship.spaceport }.to raise_error 'Spaceship cannot be at spaceport: spaceship currently released'
+      expect { spaceship.dock(spaceport) }.to raise_error 'Spaceship cannot dock: spaceship already docked'
+    end
+
+    it 'docked spaceships must be in a spaceport' do
+      spaceport.dock(spaceship)
+      expect(spaceship.spaceport).to eq spaceport
     end
 
     context 'when spacestation is full' do
       it 'does not allow spaceships to dock' do
-        36.times do
-          spaceport.dock(spaceship)
+        Spaceport::DEFAULT_CAPACITY.times do
+          another_spaceship = Spaceship.new
+          spaceport.dock(another_spaceship)
         end
         expect { spaceport.dock(spaceship) }.to raise_error 'Cannot dock spaceship: spaceport full.'
       end

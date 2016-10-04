@@ -55,12 +55,13 @@ As a spaceport traffic controller
 So the system is consistent and correctly reports spaceship status and location   
 I want to ensure a released spaceship cannot release and cannot be in a spaceport
 ```
-
-#### Yet to be implemented
-
+```
 As a spaceport traffic controller   
 So the system is consistent and correctly reports spaceship status and location   
 I want to ensure a docked spaceship cannot dock and must be in a spaceport
+```
+
+#### Yet to be implemented
 
 As a spaceport traffic controller   
 So the system is consistent and correctly reports spaceship status and location   
