@@ -69,6 +69,22 @@ describe Spaceport do
     end
   end
 
+  describe '#spaceships' do
+    before do
+      allow(security_system).to receive(:security_alert?).and_return false
+    end
+    it 'returns spaceships at the spaceport' do
+      spaceport.dock(spaceship)
+      expect(spaceport.spaceships).to include spaceship
+    end
+
+    it 'does not return spaceships that have been released' do
+      spaceport.dock(spaceship)
+      spaceport.release(spaceship)
+      expect(spaceport.spaceships).not_to include spaceship
+    end
+  end
+
   context 'defaults' do
     subject(:default_spaceport) { described_class.new(security_system)}
 

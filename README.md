@@ -60,12 +60,15 @@ As a spaceport traffic controller
 So the system is consistent and correctly reports spaceship status and location   
 I want to ensure a docked spaceship cannot dock and must be in a spaceport
 ```
+```
+As a spaceport traffic controller   
+So the system is consistent and correctly reports spaceship status and location   
+I want to ensure a spaceship that has released from a spaceport is no longer in that spaceport
+```
 
 #### Yet to be implemented
 
-As a spaceport traffic controller   
-So the system is consistent and correctly reports spaceship status and location   
-I want to ensure a spaceship that has releaseed from a spaceport is no longer in that spaceport
+
 
 As a spaceport traffic controller   
 To ensure spaceport safety

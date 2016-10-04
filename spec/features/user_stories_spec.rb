@@ -50,6 +50,12 @@ describe 'User Stories' do
       expect(spaceship.spaceport).to eq spaceport
     end
 
+    it 'releasing a spaceship removes it from that spaceport' do
+      spaceport.dock(spaceship)
+      spaceport.release(spaceship)
+      expect(spaceport.spaceships).not_to include spaceship
+    end
+
     context 'when spacestation is full' do
       it 'does not allow spaceships to dock' do
         Spaceport::DEFAULT_CAPACITY.times do
